@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>单参构造函数和转换函数</title>
-    <url>/blog/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/</url>
+    <url>/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="aaaaaaa"><a href="#aaaaaaa" class="headerlink" title="aaaaaaa"></a>aaaaaaa</h1><h2 id="bbbbbbb"><a href="#bbbbbbb" class="headerlink" title="bbbbbbb"></a>bbbbbbb</h2><h3 id="cccccccc"><a href="#cccccccc" class="headerlink" title="cccccccc"></a>cccccccc</h3><h4 id="ddddddddd"><a href="#ddddddddd" class="headerlink" title="ddddddddd"></a>ddddddddd</h4><h5 id="ddddddddddd"><a href="#ddddddddddd" class="headerlink" title="ddddddddddd"></a>ddddddddddd</h5><h6 id="eeeeeeeeeeee"><a href="#eeeeeeeeeeee" class="headerlink" title="eeeeeeeeeeee"></a>eeeeeeeeeeee</h6><h2 id="单参构造函数和转换函数"><a href="#单参构造函数和转换函数" class="headerlink" title="单参构造函数和转换函数"></a>单参构造函数和转换函数</h2><h4 id="单参构造"><a href="#单参构造" class="headerlink" title="单参构造"></a><strong>单参构造</strong></h4><hr>
 <h6 id="什么是单参构造函数"><a href="#什么是单参构造函数" class="headerlink" title="什么是单参构造函数"></a><strong>什么是单参构造函数</strong></h6><p>​    顾名思义，这是一种构造函数，且只有一个参数。</p>
 <h6 id="这种构造函数有什么特殊之处"><a href="#这种构造函数有什么特殊之处" class="headerlink" title="这种构造函数有什么特殊之处"></a><strong>这种构造函数有什么特殊之处</strong></h6><p>​    没有用explicit显示声明时，编译器会在下述情况把单独的一个类型转换成现在的类型。</p>
@@ -29,7 +29,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/blog/2020/05/04/hello-world/</url>
+    <url>/2020/05/04/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
@@ -47,7 +47,7 @@
   </entry>
   <entry>
     <title>Linux丨gcc编译过程</title>
-    <url>/blog/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</url>
+    <url>/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="Linux-gcc编译过程"><a href="#Linux-gcc编译过程" class="headerlink" title="Linux gcc编译过程"></a><strong>Linux gcc编译过程</strong></h2><h4 id="gcc的编译流程图大致如下："><a href="#gcc的编译流程图大致如下：" class="headerlink" title="gcc的编译流程图大致如下："></a><strong>gcc的编译流程图大致如下：</strong></h4><p><img src="http://q9rj0a2o7.bkt.clouddn.com/hexo/1.png" alt="1"></p>
 <p><strong>gcc常用的参数：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-I dir <span class="comment">// 说明编译时要包函的目录</span></span><br><span class="line"><span class="comment">// gcc hello.c -I ./include</span></span><br></pre></td></tr></table></figure>
