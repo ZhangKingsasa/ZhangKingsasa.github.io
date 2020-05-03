@@ -3,11 +3,11 @@
   <title>ZhangKingsasa</title>
   
   <subtitle>还没到时间怀念从前</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://gitee.com/zhangkingsasa/blog/"/>
   <updated>2020-05-03T16:11:50.417Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://gitee.com/zhangkingsasa/blog/</id>
   
   <author>
     <name>ZhangKingsasa</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/05/04/hello-world/"/>
-    <id>http://yoursite.com/2020/05/04/hello-world/</id>
+    <link href="https://gitee.com/zhangkingsasa/blog/2020/05/04/hello-world/"/>
+    <id>https://gitee.com/zhangkingsasa/blog/2020/05/04/hello-world/</id>
     <published>2020-05-03T16:11:50.417Z</published>
     <updated>2020-05-03T16:11:50.417Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>单参构造函数和转换函数</title>
-    <link href="http://yoursite.com/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/"/>
-    <id>http://yoursite.com/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/</id>
+    <link href="https://gitee.com/zhangkingsasa/blog/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/"/>
+    <id>https://gitee.com/zhangkingsasa/blog/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/</id>
     <published>2019-06-17T07:12:02.000Z</published>
     <updated>2020-05-03T17:49:29.873Z</updated>
     
@@ -59,15 +59,15 @@
     </summary>
     
     
-      <category term="C/C++" scheme="http://yoursite.com/categories/C-C/"/>
+      <category term="C/C++" scheme="https://gitee.com/zhangkingsasa/blog/categories/C-C/"/>
     
     
   </entry>
   
   <entry>
     <title>Linux丨gcc编译过程</title>
-    <link href="http://yoursite.com/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
-    <id>http://yoursite.com/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</id>
+    <link href="https://gitee.com/zhangkingsasa/blog/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
+    <id>https://gitee.com/zhangkingsasa/blog/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</id>
     <published>2019-04-30T12:04:47.000Z</published>
     <updated>2020-05-03T18:12:06.872Z</updated>
     
@@ -84,10 +84,10 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+      <category term="Linux" scheme="https://gitee.com/zhangkingsasa/blog/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+      <category term="Linux" scheme="https://gitee.com/zhangkingsasa/blog/tags/Linux/"/>
     
   </entry>
   
