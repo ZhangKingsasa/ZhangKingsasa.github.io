@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ZhangKingsasa</title>
+  
+  <subtitle>还没到时间怀念从前</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-05-03T16:11:50.417Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>ZhangKingsasa</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2020/05/04/hello-world/"/>
+    <id>http://yoursite.com/2020/05/04/hello-world/</id>
+    <published>2020-05-03T16:11:50.417Z</published>
+    <updated>2020-05-03T16:11:50.417Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>单参构造函数和转换函数</title>
+    <link href="http://yoursite.com/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/</id>
+    <published>2019-06-17T07:12:02.000Z</published>
+    <updated>2020-05-03T17:49:29.873Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;aaaaaaa&quot;&gt;&lt;a href=&quot;#aaaaaaa&quot; class=&quot;headerlink&quot; title=&quot;aaaaaaa&quot;&gt;&lt;/a&gt;aaaaaaa&lt;/h1&gt;&lt;h2 id=&quot;bbbbbbb&quot;&gt;&lt;a href=&quot;#bbbbbbb&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="C/C++" scheme="http://yoursite.com/categories/C-C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux丨gcc编译过程</title>
+    <link href="http://yoursite.com/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</id>
+    <published>2019-04-30T12:04:47.000Z</published>
+    <updated>2020-05-03T18:12:06.872Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Linux-gcc编译过程&quot;&gt;&lt;a href=&quot;#Linux-gcc编译过程&quot; class=&quot;headerlink&quot; title=&quot;Linux gcc编译过程&quot;&gt;&lt;/a&gt;&lt;strong&gt;Linux gcc编译过程&lt;/strong&gt;&lt;/h2&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+</feed>

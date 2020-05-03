@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>单参构造函数和转换函数</title>
+    <url>/2019/06/17/C++%E5%8D%95%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="aaaaaaa"><a href="#aaaaaaa" class="headerlink" title="aaaaaaa"></a>aaaaaaa</h1><h2 id="bbbbbbb"><a href="#bbbbbbb" class="headerlink" title="bbbbbbb"></a>bbbbbbb</h2><h3 id="cccccccc"><a href="#cccccccc" class="headerlink" title="cccccccc"></a>cccccccc</h3><h4 id="ddddddddd"><a href="#ddddddddd" class="headerlink" title="ddddddddd"></a>ddddddddd</h4><h5 id="ddddddddddd"><a href="#ddddddddddd" class="headerlink" title="ddddddddddd"></a>ddddddddddd</h5><h6 id="eeeeeeeeeeee"><a href="#eeeeeeeeeeee" class="headerlink" title="eeeeeeeeeeee"></a>eeeeeeeeeeee</h6><h2 id="单参构造函数和转换函数"><a href="#单参构造函数和转换函数" class="headerlink" title="单参构造函数和转换函数"></a>单参构造函数和转换函数</h2><h4 id="单参构造"><a href="#单参构造" class="headerlink" title="单参构造"></a><strong>单参构造</strong></h4><hr>
+<h6 id="什么是单参构造函数"><a href="#什么是单参构造函数" class="headerlink" title="什么是单参构造函数"></a><strong>什么是单参构造函数</strong></h6><p>​    顾名思义，这是一种构造函数，且只有一个参数。</p>
+<h6 id="这种构造函数有什么特殊之处"><a href="#这种构造函数有什么特殊之处" class="headerlink" title="这种构造函数有什么特殊之处"></a><strong>这种构造函数有什么特殊之处</strong></h6><p>​    没有用explicit显示声明时，编译器会在下述情况把单独的一个类型转换成现在的类型。</p>
+<ul>
+<li>重载某个二元运算符，但是在调用时另一个类对象不是当前类。</li>
+</ul>
+<h6 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a><strong>举个例子</strong></h6><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fraction</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> m_numerator;</span><br><span class="line">	<span class="keyword">int</span> m_denomiator;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">	Fraction(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) </span><br><span class="line">		: m_numerator(num), m_denomiator(den) &#123; &#125;</span><br><span class="line">	~Fraction() &#123;&#125;</span><br><span class="line">    Fraction <span class="keyword">operator</span> + (<span class="keyword">const</span> Fraction&amp; f) &#123;</span><br><span class="line">        <span class="keyword">int</span> _gcd = gcd(m_denomiator, f.m_denomiator);</span><br><span class="line">        <span class="keyword">int</span> minDenomi = m_denomiator / _gcd * f.m_denomiator;</span><br><span class="line">        <span class="keyword">return</span> Fraction( minDenomi / f.m_denomiator * m_numerator</span><br><span class="line">                        +minDenomi / m_denomiator * f.m_numerator, minDenomi);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(y == <span class="number">0</span>) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">return</span> gcd(y, x % y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="function">Fraction <span class="title">f</span><span class="params">(<span class="number">7</span>, <span class="number">4</span>)</span></span>;</span><br><span class="line">	Fraction tmp = f + <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    对于<code>main</code>函中的数<code>tmp = f + 3</code>语句，编译器会隐式的调用构造函数把3变成一个<code>Fraction</code>对象，然后我们重载了<code>+</code>运算符，然后进行操作，赋值给<code>tmp</code>。</p>
+<h6 id="如何禁止隐式单参构造调用"><a href="#如何禁止隐式单参构造调用" class="headerlink" title="如何禁止隐式单参构造调用"></a><strong>如何禁止隐式单参构造调用</strong></h6><p>​    将单参构造函数标识为<code>explicit</code>声明其必须显示调用。</p>
+<h4 id="转换函数"><a href="#转换函数" class="headerlink" title="转换函数"></a><strong>转换函数</strong></h4><h6 id="什么是转换函数"><a href="#什么是转换函数" class="headerlink" title="什么是转换函数"></a><strong>什么是转换函数</strong></h6><p>​    一种重载运算符，重载符号是一种类型。</p>
+<h6 id="这种转换函数有什么特殊之处"><a href="#这种转换函数有什么特殊之处" class="headerlink" title="这种转换函数有什么特殊之处"></a><strong>这种转换函数有什么特殊之处</strong></h6><p>​    在任何需要的时候，编译器会将隐式的调用此函数，将当前类对象转换成当前所需要的类对象。</p>
+<h6 id="举个例子-1"><a href="#举个例子-1" class="headerlink" title="举个例子"></a><strong>举个例子</strong></h6><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fraction</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> m_numerator;</span><br><span class="line">	<span class="keyword">int</span> m_denomiator;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">	Fraction(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) </span><br><span class="line">		: m_numerator(num), m_denomiator(den) &#123; &#125;</span><br><span class="line">	~Fraction() &#123;&#125;</span><br><span class="line">  	<span class="comment">// 转换函数</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="title">double</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> (<span class="keyword">double</span>)m_numerator / m_denomiator;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fenzi</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> m_numerator; &#125;;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fenmu</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> m_denomiator; &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="function">Fraction <span class="title">f</span><span class="params">(<span class="number">7</span>, <span class="number">4</span>)</span></span>;</span><br><span class="line">	Fraction tmp = f + <span class="number">3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d / %d\n"</span>, tmp.fenzi(), tmp.fenmu());</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    这里我们发现在<code>main</code>函数中<code>tmp = f + 3;</code> 编译器会把f用转换函数变成<code>double</code>值，然后再加上3，最后再通过单参构造变成<code>Fraction</code>类型，最后输出是4 / 1;</p>
+<h6 id="如何禁止隐式转换函数调用"><a href="#如何禁止隐式转换函数调用" class="headerlink" title="如何禁止隐式转换函数调用"></a><strong>如何禁止隐式转换函数调用</strong></h6><p>​    将转换函数标识为<code>explicit</code>声明其必须显示调用。</p>
+<h4 id="单参构造与转换函数的冲突"><a href="#单参构造与转换函数的冲突" class="headerlink" title="单参构造与转换函数的冲突"></a><strong>单参构造与转换函数的冲突</strong></h4><hr>
+<h6 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h6><p>​    当转换函数和有重载函数的单参构造放一起的话，执行<code>Fraction tmp = f + 3</code>语句时会产生二意性，会报错。我们不知道是把<code>f</code>变成<code>double</code>还是把3变成<code>Fraction</code>。</p>
+<h6 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a><strong>解决办法</strong></h6><p>​    在声明单参构造和转换函数时，都要标明<code>explicit</code>，禁止隐式转换。</p>
+]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/05/04/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Linux丨gcc编译过程</title>
+    <url>/2019/04/30/linux%E4%B8%A8gcc%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="Linux-gcc编译过程"><a href="#Linux-gcc编译过程" class="headerlink" title="Linux gcc编译过程"></a><strong>Linux gcc编译过程</strong></h2><h4 id="gcc的编译流程图大致如下："><a href="#gcc的编译流程图大致如下：" class="headerlink" title="gcc的编译流程图大致如下："></a><strong>gcc的编译流程图大致如下：</strong></h4><p><img src="http://q9rj0a2o7.bkt.clouddn.com/hexo/1.png" alt="1"></p>
+<p><strong>gcc常用的参数：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-I dir <span class="comment">// 说明编译时要包函的目录</span></span><br><span class="line"><span class="comment">// gcc hello.c -I ./include</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-o <span class="comment">// 把可执行文件输出到具体目录</span></span><br><span class="line"><span class="comment">// gcc hello.c -I ./include -o hello</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-O <span class="comment">// 优化选项，1-3级</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-c <span class="comment">// 编译成.o文件</span></span><br><span class="line"><span class="comment">// gcc -c hello.c</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-g <span class="comment">// 用于gdb调试，不加此选项不能gdb调试</span></span><br><span class="line"><span class="comment">// gcc hello.c -g</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-lstdc++ <span class="comment">// 编译c++代码</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-L <span class="comment">// 包函库文件路径</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">-l <span class="comment">// 包函库名</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+</search>
